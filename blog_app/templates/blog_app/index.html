@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+  <title>夏枯草</title>
+  {% load static %}
+
+  {# Display django.contrib.messages as Bootstrap alerts #}
+  <meta name="keywords" content="" />
+  <meta name="description" content="主题的个人博客模板，优雅、稳重、大气,低调。"/>
+  <link rel="icon" href="{% static 'blog_app/images/图标.png'%}" type="image/gif">
+
+  <link href="{% static 'blog_app/css/base.css' %}" rel="stylesheet">
+  <link href="{% static 'blog_app/css/index.css' %}" rel="stylesheet">
+
+  <!--[if lt IE 9]>
+  <script src="{% static 'blog_app/js/modernizr.js' %}"></script>
+   <![endif]-->
+  {% load bootstrap4 %}
+
+  {# Load CSS and JavaScript #}
+  {% bootstrap_css %}
+  {% bootstrap_javascript jquery='full' %}
+  <script src="{% static 'blog_app/js/index.js' %}"></script>
+
+
+</head>
+<body>
+<header>
+  {% include '../title.html'%}
+</header>
+  <div class="banner">
+    <section class="box">
+      <ul class="texts">
+        <p>打了死结的青春，捆死一颗苍白绝望的灵魂。</p>
+        <p>为自己掘一个坟墓来葬心，红尘一梦，不再追寻。</p>
+        <p>加了锁的青春，不会再因谁而推开心门。</p>
+      </ul>
+      <div class="avatar"><a href="#"><span>夏枯草</span></a> </div>
+    </section>
+  </div>
+  <article>
+    <h2 class="title_tj">
+      <p>文章<span>推荐</span></p>
+    </h2>
+
+        <div class="bloglist left">
+          {% for item in values %}
+            <div class="Article_list">
+              <h6>标题:{{ item.title}}</h6>
+              <p class="dateview"><span>{{item.put_date}}</span><span>作者：夏枯草</span><span>文章类型：{{item.text_type}}</span><a id="click_num" title="{{ item.id }}" href="{{ item.id }}/new" target="_blank" class="readmore">阅读全文>></a></p>
+            </div>
+          {% endfor %}
+        </div>
+
+    <aside class="right">
+      <div class="weather"><iframe width="250" scrolling="no" height="60" frameborder="0" allowtransparency="true" src="http://i.tianqi.com/index.php?c=code&id=12&icon=1&num=1"></iframe></div>
+      <div class="news">
+      <h3>
+        <p>最新<span>文章</span></p>
+      </h3>
+      <ul class="rank">
+        {% for item in sort_date%}
+        <li><a href="{{item.id}}/new" title="{{item.title}}" target="_blank">{{item.title}}</a></li>
+        {% endfor %}
+      </ul>
+      <h3 class="ph">
+        <p>点击<span>排行</span></p>
+      </h3>
+      <ul class="paih">
+        {% for item in sort_click%}
+          <li><a href="{{item.id}}/new" title="{{item.title}}" target="_blank">{{item.title}}</a></li>
+        {%endfor%}
+      </ul>
+      <h3 class="links">
+        <p>友情<span>链接</span></p>
+      </h3>
+      <ul class="website">
+        <li><a href="https://blog.csdn.net/qq_42679379">CSND</a></li>
+        <li><a href="https://www.ctolib.com/">CTOLib码库</a></li>
+        <li><a href="https://bainingchao.github.io/">白宁超的官网</a></li>
+        <li><a href="http://www.statsmodels.org">Python数据建模</a></li>
+      </ul>
+      </div>
+      <!-- Baidu Button BEGIN -->
+      <div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare"><a class="bds_tsina"></a><a class="bds_qzone"></a><a class="bds_tqq"></a><a class="bds_renren"></a><span class="bds_more"></span><a class="shareCount"></a></div>
+      <script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=6574585" ></script>
+      <script type="text/javascript" id="bdshell_js"></script>
+      <script type="text/javascript">
+    document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+    </script>
+        <!-- Baidu Button END -->
+        <a href="/" class="weixin"> </a></aside>
+      <div class="paging">
+    <nav aria-label="Page navigation">
+      <ul class="pagination" >
+        {% if values.has_previous %}
+        <li>
+          <a href="?page={{values.previous_page_number}}" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        {% endif %}
+        {% for item in values.paginator.page_range%}
+          {% if item < 6%}
+          <li><a href="?page={{ item }}">{{ item }}</a></li>
+          {% endif %}
+        {% endfor %}
+        {% if values.has_next %}
+        <li>
+          <a id="Next_page" href="?page={{values.next_page_number}}" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+        {% endif%}
+      </ul>
+    </nav>
+  </div>
+  </article>
+
+  {% include '../bottom.html'%}
+<script src="{% static 'blog_app/js/silder.js'%}"></script>
+</body>
+</html>

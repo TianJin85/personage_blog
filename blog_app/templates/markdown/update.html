@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>夏枯草</title>
+        {% load static %}
+
+        {% load bootstrap4 %}
+
+        {# Load CSS and JavaScript #}
+        {% bootstrap_css %}
+        {% bootstrap_javascript jquery='full' %}
+
+
+        {# Display django.contrib.messages as Bootstrap alerts #}
+        {% bootstrap_messages %}
+    <link href="{% static 'blog_app/css/base.css' %}" rel="stylesheet">
+    <link href="{% static 'blog_app/css/update.css'%}" rel="stylesheet">
+</head>
+<body>
+    <table class="table student-data-table">
+        <thead class="table-title">
+            <tr>
+                 <td>
+                     <div id="update-imag">
+                         <img src="{%static 'blog_app/images/前进.png'%}">
+                         <img src="{%static 'blog_app/images/后退.png'%}">
+                         <img src="{%static 'blog_app/images/Update.png'%}">
+                     </div>
+
+                 </td>
+                <td>文章标题</td>
+                <td>文章标签</td>
+                <td>文章分类</td>
+                <td>文章类型</td>
+                <td>博客类型</td>
+                <td>发布时间</td>
+                <td>阅读次数</td>
+                <td class="article-center">
+                    <span>操作</span>
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in update_val%}
+            <tr>
+                <td class="article-center">{{item.id}}</td>
+                <td>{{item.title}}</td>
+                <td>{{item.label}}</td>
+                <td>{{item.title_class}}</td>
+                <td>{{item.text_type}}</td>
+                <td>{{item.blog_type}}</td>
+                <td>{{item.put_date}}</td>
+                <td>{{item.click_num}}</td>
+                <td>
+                    <a href="{% url 'amend'%}"><span>修改</span></a>
+                    <a href="{{item.id}}/new"><span>查看</span></a>
+                    <a href="{{item.id}}/new"><span>删除</span></a>
+                </td>
+            </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+    <div class="paging">
+        <nav aria-label="Page navigation">
+
+          <ul class="pagination">
+              {% if update_val.has_previous %}
+                <li>
+                  <a href="?page={{update_val.previous_page_number}}" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                  </a>
+                </li>
+              {%endif%}
+                {% for item in update_val.paginator.page_range%}
+                    {% if item < 6 %}
+                    <li><a href="?page={{item}}">{{item}}</a></li>
+                    {% endif%}
+                {% endfor%}
+              {% if update_val.has_next %}
+                <li>
+                  <a href="?page={{update_val.next_page_number}}" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                  </a>
+                </li>
+              {%endif%}
+          </ul>
+        </nav>
+    </div>
+{% include '../bottom.html'%}
+</body>
+</html>

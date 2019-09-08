@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>夏枯草</title>
+        {% load static %}
+
+        {% load bootstrap4 %}
+
+        {# Load CSS and JavaScript #}
+        {% bootstrap_css %}
+        {% bootstrap_javascript jquery='full' %}
+
+
+        {# Display django.contrib.messages as Bootstrap alerts #}
+        {% bootstrap_messages %}
+    <link href="{% static 'blog_app/css/base.css' %}" rel="stylesheet">
+    <link href="{% static 'blog_app/css/update.css'%}" rel="alternate">
+</head>
+<body>
+    <table class="table student-data-table">
+        <thead class="table-title">
+            <tr>
+                 <td>ID</td>
+                <td>作者</td>
+                <td>文章标题</td>
+                <td>文章内容</td>
+                <td>文章标签</td>
+                <td>文章分类</td>
+                <td>文章类型</td>
+                <td>博客类型</td>
+                <td>发布时间</td>
+                <td>阅读次数</td>
+                <td>操作</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>ID</td>
+                <td>作者</td>
+                <td>文章标题</td>
+                <td>文章内容</td>
+                <td>文章标签</td>
+                <td>文章分类</td>
+                <td>文章类型</td>
+                <td>博客类型</td>
+                <td>发布时间</td>
+                <td>阅读次数</td>
+                <td>
+                    <span>修改</span>
+                </td>
+            </tr>
+            <tr>
+                    <td>ID</td>
+                    <td>作者</td>
+                    <td>文章标题</td>
+                    <td>文章内容</td>
+                    <td>文章标签</td>
+                    <td>文章分类</td>
+                    <td>文章类型</td>
+                    <td>博客类型</td>
+                    <td>发布时间</td>
+                    <td>阅读次数</td>
+                    <td>
+                        <span>修改</span>
+                    </td>
+                </tr>
+        </tbody>
+    </table>
+</body>
+</html>

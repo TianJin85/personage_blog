@@ -1,0 +1,42 @@
+.table-title{
+    font-size: 16px;
+    color: black;
+}
+#update-imag img{
+    border: 0;
+    display: inline;
+    width: 20px;
+    margin-left: 5px;
+}
+#update-imag{
+    margin-right: -36px;
+}
+.article-center{
+   text-align: center;
+}
+.table td, .table th {
+    padding: .75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+    text-align: center;
+}
+.paging > nav > ul > li{
+    border: solid 1px #ddd;
+    width: 20px;
+    height: 20px;
+    border-radius: 100px;
+    text-align: center;
+    padding-top: 3px;
+}
+
+.paging > nav > ul > li >a{
+    text-align: center;
+    top: -4px;
+}
+.paging > nav > ul{
+ padding-left: 45%;
+ /*left: 20px;*/
+}
+.paging {
+    margin: 0px auto;
+}

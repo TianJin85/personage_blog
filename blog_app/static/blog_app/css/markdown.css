@@ -1,0 +1,156 @@
+#title > div > input{
+
+    left: 40px;
+    border-radius: 20px;
+}
+#add-ht{
+    width: 30px;
+    height: 39px;
+    border: 0;
+    display: block
+}
+.input-group{
+    width: 85%;
+    margin:0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    left: 46px;
+    display: inline-flex;
+}
+#but_submit {
+    /* padding-top: 5px; */
+    position: relative;
+    width: 100px;
+    height: 40px;
+    background-color: #ca0c16;
+    left: 90px;
+    padding-top: 5px;
+    border-radius: 20px;
+}
+.input-group>.custom-file, .input-group>.custom-select, .input-group>.form-control{
+    height: 40px;
+}
+.btn-group, .btn-group-vertica{
+    top: -5px;
+    left: 60px;
+    height: 39px;
+
+}
+.btn-group>.btn:first-child{
+    opacity: 0.5;
+}
+.modal-content{
+    height: 606px;
+}
+.modal-header > font{
+    font-size: 17px;
+    color: black;
+}
+
+.my_label{
+    padding: 0 16px;
+    padding-top: 20px;
+}
+.my_class{
+    padding: 0 16px;
+    padding-top: 30px;
+}
+.my_class_ls{
+    border: ridge;
+    width: 420px;
+    height: 220px;
+    margin-left: 16px;
+}
+.my_class_ls > textarea{
+    width: 400px;
+    height: 250px;
+    margin-left: 16px;
+}
+
+.my_label > font > span > img{
+    width: 20px;
+    height: 20px;
+    display: inline;
+}
+.my_class > font > span > img{
+    width: 20px;
+    height: 20px;
+    display: inline;
+}
+#but_submit{
+    padding-top: 5px;
+}
+#add_value{
+    border:0px;
+    outline:none;
+}
+#add_label_val{
+   border:0px;
+   outline:none;
+}
+
+.my_class_ls > div > input{
+    zoom:1.5;
+}
+
+#wz-class{
+    width:20px;
+    display:initial;
+}
+
+#bolg-class{
+    display:inline;
+}
+.class-list >div >select{
+    border-radius:4px;
+    width: 140px;
+    height: 32px;
+    background-color: #ccc;
+
+}
+
+.class-list{
+    border: none;
+    position: relative;
+    top: 30px;
+    left: 16px;
+    font-size: 14px;
+}
+.tag__option-label{
+    position: relative;
+}
+.tag__option-label > input{
+    width: 17px;
+    height: 17px;
+    position: relative;
+    top: 15px;
+    left: 21px;
+}
+.tag__option-label > span{
+    top: 16px;
+    position: absolute;
+    left: 50px;
+}
+.tag__option-label{
+    border: 1px solid;
+    width: 420px;
+    height: 235px;
+    left: 17px;
+    border-color: #d5d5d5;
+    max-height:235px;
+    display:table;
+}
+.tag__option-label > div{
+    height: 32px;
+    width: 110px;
+    margin-left: 20px;
+    margin-top: 10px;
+    display: inline-block;
+    font-size: 16px;
+}
+.tag-option-list > input{
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: 5px;
+}
