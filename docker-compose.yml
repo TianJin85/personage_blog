@@ -2,7 +2,7 @@ version: "3"
 services:
   web:
     # replace username/repo:tag with your name and image details
-    image: tianjin/personage_blog:tag
+    image: tianjin/personage_blog
     deploy:
       replicas: 5
       resources:
@@ -15,5 +15,8 @@ services:
       - "4000:8000"
     networks:
       - webnet
+    volumes:
+      # Mount source-code for development
+      - .:/personage_blog
 networks:
   webnet:
