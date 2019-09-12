@@ -4,4 +4,3 @@ django-bootstrap4
 simpleui
 markdown
 django-simpleui
-
