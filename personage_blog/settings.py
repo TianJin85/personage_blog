@@ -151,7 +151,8 @@ SIMPLEUI_CONFIG = {
         'models' : [{
             'name' : '添加文章',
             'icon' : 'fas fa-plus-square',
-            'url': 'http://49.235.110.51:8000/markdowns'
+            # 'url': 'http://49.235.110.51:8000/markdowns'
+            'url': 'http://127.0.0.1:8000/markdowns'
         },
         {
             'name' : '修改文章',
