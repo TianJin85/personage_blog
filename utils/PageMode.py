@@ -13,7 +13,7 @@ def Page(request, count_value, page_count):
         except PageNotAnInteger:
             # 如果请求的首页不是整数，返回第一页
             count_value = paginator.page(1)
-            pass
+        
         except InvalidPage:
             # 如果请求的页数不是整数，放回第一页
             return HttpResponse('找不到页面')
