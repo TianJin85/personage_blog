@@ -10,7 +10,7 @@ class ArticleForm(forms.Form):
     text_type = forms.CharField()
     blog_type = forms.CharField()
     text_content = forms.CharField()
-    click_num = forms.CharField()
+    click_num = forms.IntegerField()
 
 
 class CommentForm(forms.Form):
