@@ -5,7 +5,6 @@ class ArticleForm(forms.Form):
 
     title = forms.CharField()
     label = forms.CharField()
-    put_date = forms.DateField()
     title_class = forms.CharField()
     text_type = forms.CharField()
     blog_type = forms.CharField()

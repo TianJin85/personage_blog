@@ -7,6 +7,7 @@ from django.views import View
 from utils import PageMode
 
 from .models import Article
+from .forms.Base import ArticleForm
 
 
 class ListIndexView(View):
@@ -123,7 +124,7 @@ class ListMarkdownsView(View):
             title_class = request.POST['title_class']
             text_type = request.POST['text_type']
             blog_type = request.POST['blog_type']
-            text_content = request.POST['content']
+            text_content = request.POST['text_content']
             text_types = {"0": "null", "original": "原创", "repost": "转载", "translated": "翻译"}
             blog_types = {"0": "选择分类", "28": "人工智能", "1": "移动开发", "29": "物联网", "15": "架构", "2": "云计算",
                           "17": "互联网", "30": "游戏开发", "12": "运维", "6": "数据库", "14": "前端",
@@ -134,8 +135,8 @@ class ListMarkdownsView(View):
 
             At = Article(title=title, label=label, put_date=put_date, title_class=title_class, text_type=text_type,
                          blog_type=blog_type, text_content=text_content)
-            At.save()
-
+            # At.save()
+            print(ArticleForm(request.POST))
             return render(request, self.template_index)
 
 
