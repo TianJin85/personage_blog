@@ -97,46 +97,14 @@
             </font>
       </div>
       <div class="tag__option-label">
-          <div class="tag-option-list">
-              <input type="checkbox" class="toggle">
-              <span>Python</span>
-          </div>
-          <div class="tag-option-list">
-             <input type="checkbox">
-              <span>Python</span>
-          </div>
-          <div class="tag-option-list">
-              <input type="checkbox">
-              <span>Python</span>
-          </div>
-          <div class="tag-option-list">
-              <input type="checkbox">
-              <span>Python</span>
-          </div>
-          <div class="tag-option-list">
-              <input type="checkbox">
-              <span>Python</span>
-          </div>
-          <div class="tag-option-list">
-              <input type="checkbox">
-              <span>Python</span>
-          </div>
-          <div class="tag-option-list">
-              <input type="checkbox">
-              <span>Python</span>
-          </div>
-          <div class="tag-option-list">
-              <input type="checkbox">
-              <span>Python</span>
-          </div>
-          <div class="tag-option-list">
-              <input type="checkbox">
-              <span>Python</span>
-          </div>
-          <div class="tag-option-list">
-              <input type="checkbox">
-              <span>Python</span>
-          </div>
+          {% for items in contexts%}
+              {% for item in items.values%}
+                  <div class="tag-option-list">
+                      <input type="checkbox" class="toggle">
+                      <span>{{item}}</span>
+                  </div>
+              {% endfor %}
+          {% endfor %}
       </div>
       <div class="class-list">
             <div class="form-entry__field" id="wz-class">
