@@ -26,7 +26,9 @@ class ListIndexView(View):
         values = PageMode.Page(request, value, 15)
 
         return render(request, self.template_name, {"values": values, "sort_date": sort_date, "sort_click": sort_click})
-
+    def post(self, request, *args, **kwargs):
+        data = {"name" : 'tianjin'}
+        return HttpResponse(content=data)
 
 class ListAboutView(View):
     template_name = 'blog_app/about.html'
@@ -162,7 +164,9 @@ class ListDeleteView(View):
 
     def get(self, request, *args, **kwargs):
 
-        return render(request, self.template_name)
+        # return render(request, self.template_name)
+        return HttpResponse("""<h2>jQuery and AJAX is FUN!!!</h2>
+<p id="p1">This is some text in a paragraph.</p>""")
 
 
 class ListNewlistView(View):
@@ -185,3 +189,4 @@ class ListAmendView(View):
 
     def get(self, request, *args, **kwargs):
         return render(request, 'markdown/amend.html')
+
