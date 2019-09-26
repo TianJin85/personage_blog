@@ -24,10 +24,10 @@ class ListIndexView(View):
         value = [item for item in article]
         sort_click = [item for item in sort_click]
         values = PageMode.Page(request, value, 15)
-
         return render(request, self.template_name, {"values": values, "sort_date": sort_date, "sort_click": sort_click})
+
     def post(self, request, *args, **kwargs):
-        data = {"name" : 'tianjin'}
+        data = "tianjin"
         return HttpResponse(content=data)
 
 class ListAboutView(View):
@@ -62,7 +62,11 @@ class ListNewView(View):
     template_name = 'blog_app/new.html'
 
     def get(self, request, article_id):
+
         article = Article.objects.get(id=int(article_id))
+        # 获取最大id数
+        list_id = [item for items in Article.objects.values('id') for item in items.values()]
+
         article.click_num += 1
         article.save()
         # 查询最新排行榜
@@ -73,15 +77,17 @@ class ListNewView(View):
         sort_click = Article.objects.values("id", "title").order_by("click_num")[::-1][:5]
         sort_click = [item for item in sort_click]
 
-        # 上一篇文章
-
-        up_article = Article.objects.get(id=int(article_id + 1))
-        up_article = {"id": up_article.id, "title": up_article.title}
-
         # 下一篇文章
-
         next_article = Article.objects.get(id=int(article_id - 1))
         next_article = {"id": next_article.id, "title": next_article.title}
+        if max(list_id) > article_id:
+            # 上一篇文章
+
+            up_article = Article.objects.get(id=int(article_id + 1))
+            up_article = {"id": up_article.id, "title": up_article.title}
+
+        else:
+            up_article = {"id": None, "title": None}
 
         article.text_content = markdown.markdown(article.text_content, extensions=[
             'markdown.extensions.extra',
