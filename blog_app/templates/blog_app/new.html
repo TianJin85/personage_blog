@@ -25,8 +25,20 @@
     <h2 class="c_titile">{{article.title}}</h2>
     <p class="box_c"><span class="d_time">发布时间：{{article.put_date}}</span><span>编辑：夏枯草</span><span>阅读数量：{{article.click_num}}</span></p>
     <div class="infos">{{article.text_content|safe}}</div>
+
     <div class="keybq">
     <p><span>关键字词</span>：爱情,犯错,原谅,分手</p>
+    </div>
+    <div class="conmment">
+
+        <div id="conmment-content">
+
+            <div id="font">
+                <img src="{%static 'blog_app/images/笔记.png'%}">
+                <span>点击评论</span>
+            </div>
+
+        </div>
     </div>
     <div class="ad"> </div>
     <div class="nextinfo">
