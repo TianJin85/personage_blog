@@ -14,6 +14,7 @@ class ListIndexView(View):
     template_name = 'blog_app/index.html'
 
     def get(self, request, *args, **kwargs):
+
         article = Article.objects.values('id', 'title', 'put_date', 'text_type')[::-1]  # 查询文章列表倒序排列
         # 查询最新排行榜
         sort_date = Article.objects.values("id", "title").order_by("put_date")[::-1][:6]
@@ -28,7 +29,9 @@ class ListIndexView(View):
 
     def post(self, request, *args, **kwargs):
         data = "tianjin"
+        print(self.request.POST['name'])
         return HttpResponse(content=data)
+
 
 class ListAboutView(View):
     template_name = 'blog_app/about.html'
@@ -62,7 +65,6 @@ class ListNewView(View):
     template_name = 'blog_app/new.html'
 
     def get(self, request, article_id):
-
         article = Article.objects.get(id=int(article_id))
         # 获取最大id数
         list_id = [item for items in Article.objects.values('id') for item in items.values()]
@@ -93,9 +95,11 @@ class ListNewView(View):
             'markdown.extensions.extra',
             'markdown.extensions.codehilite',
             'markdown.extensions.toc'])
+        lick_title = Article.objects.filter(title__contains=article.title).values()[:6]
+        lick_title = [{'id': items['id'], 'title': items['title']}for items in lick_title]
 
-        text_content = {'article': article, "sort_date": sort_date, "sort_click": sort_click,
-                        'next_article': next_article, 'up_article': up_article
+        text_content = {'article': article, 'sort_date': sort_date, 'sort_click': sort_click,
+                        'next_article': next_article, 'up_article': up_article, 'lick_title': lick_title
                         }
 
         return render(request, self.template_name, text_content)
@@ -181,6 +185,7 @@ class ListNewlistView(View):
     def get(self, request, *args, **kwargs):
         # 查询最新排行榜
         sort_date = Article.objects.values("id", "title").order_by("put_date")[::-1][:6]
+
         # 查询点击量排行榜
         sort_click = Article.objects.values("id", "title").order_by("click_num")[::-1][:5]
         sort_date = [item for item in sort_date]
@@ -191,8 +196,8 @@ class ListNewlistView(View):
 
 
 class ListAmendView(View):
-    template_name = 'markdown/amend.html'
+    template_name = 'markdown/load.html'
 
     def get(self, request, *args, **kwargs):
-        return render(request, 'markdown/amend.html')
+        return render(request, self.template_name)
 
