@@ -7,7 +7,7 @@ $(document).ready(function () {
 
 });
 function show_conmment_content() {
-    $('#conmment-content').show();
+    $('#conmment-content').fadeIn();
 }
 function hide_conmment_content() {
     $('#conmment-content').hide();
