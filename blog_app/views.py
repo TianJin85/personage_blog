@@ -196,7 +196,7 @@ class ListNewlistView(View):
 
 
 class ListAmendView(View):
-    template_name = 'markdown/load.html'
+    template_name = 'markdown/upindex.html'
 
     def get(self, request, *args, **kwargs):
         return render(request, self.template_name)

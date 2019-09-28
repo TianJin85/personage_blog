@@ -45,7 +45,9 @@
     <div id="title">
         <div class="input-group input-group-lg">
             <a href="{% url 'update'%}"><img id="add-ht"src="{% static 'blog_app/images/retreat.png'%}"></a>
+            {% block "title" %}
             <input name="title" type="text" class="form-control" placeholder="请输入标题" aria-describedby="sizing-addon1">
+            {% endblock %}
             <button type="button" id="but_submit" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#exampleModal">
                 发布文章
             </button>
@@ -67,7 +69,9 @@
                 <font style="font-size: 13px;color: black;">文章标签:
                     <input id="add_label_val" name="label">
                     <span id="la_value"></span>
+                    {% block "label" %}
                     <span id="add_label" type="input">
+                    {% endblock %}
                         <img src="{%static 'blog_app/images/addclass.png'%}">
                         <label>添加文章</label>
                     </span>
@@ -80,15 +84,19 @@
           </div>
             <div class="paper white">
                 <div class="paper-content">
+                    {% block "date" %}
                     <div class="form-row">
                         <input type="text" name="put_date" placeholder="Date picker" id="singleDateRange">
                     </div>
+                    {% endblock %}
                 </div>
             </div>
         </div>
       <div class="my_class">
             <font style="font-size: 13px;color: black;">个人分类:
+                    {% block "title_class" %}
                     <input id="add_value" name="title_class">
+                    {% endblock %}
                     <span id="cl_value" ></span>
                     <span id="add_class">
                         <img src="{%static 'blog_app/images/addclass.png'%}">
@@ -107,6 +115,7 @@
           {% endfor %}
       </div>
       <div class="class-list">
+            {% block "text_type" %}
             <div class="form-entry__field" id="wz-class">
                 <label>文章类型:</label>
                 <select class="textfield" name="text_type">
@@ -116,8 +125,10 @@
                     <option value="translated">翻译</option>
                 </select>
             </div>
+            {% endblock %}
             <div class="form-entry__field" id="bolg-class" >
                 <label>博客分类：</label>
+                {% block "blog_type" %}
                 <select class="textfield" id="blog_type" name="blog_type">
                     <option value="0" selected="selected">选择分类</option>
                     <option value="28">人工智能</option>
@@ -140,6 +151,7 @@
                     <option value="36">资讯</option>
                     <option value="37">计算机理论与基础</option>
                 </select>
+                {% endblock %}
             </div>
       </div>
       </div>
@@ -190,7 +202,6 @@
                 });
             });
         });
-
     </script>
     <script>
     'use strict';

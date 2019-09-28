@@ -10744,8 +10744,8 @@ table_store_TableStore.prototype.loadData = function (row, treeNode) {
 
   var table = this.table;
   var parentRowKey = treeNode.rowKey;
-  if (table.lazy && table.load) {
-    table.load(row, treeNode, function (data) {
+  if (table.lazy && table.upindex) {
+    table.upindex(row, treeNode, function (data) {
       if (!Array.isArray(data)) {
         throw new Error('data must be an array');
       }
@@ -24420,7 +24420,7 @@ var node_Node = function () {
   };
 
   Node.prototype.shouldLoadData = function shouldLoadData() {
-    return this.store.lazy === true && this.store.load && !this.loaded;
+    return this.store.lazy === true && this.store.upindex && !this.loaded;
   };
 
   Node.prototype.updateLeafState = function updateLeafState() {
@@ -24561,7 +24561,7 @@ var node_Node = function () {
 
     var defaultProps = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
 
-    if (this.store.lazy === true && this.store.load && !this.loaded && (!this.loading || Object.keys(defaultProps).length)) {
+    if (this.store.lazy === true && this.store.upindex && !this.loaded && (!this.loading || Object.keys(defaultProps).length)) {
       this.loading = true;
 
       var resolve = function resolve(children) {
@@ -24577,7 +24577,7 @@ var node_Node = function () {
         }
       };
 
-      this.store.load(this, resolve);
+      this.store.upindex(this, resolve);
     } else {
       if (callback) {
         callback.call(this);
@@ -24662,8 +24662,8 @@ var tree_store_TreeStore = function () {
       store: this
     });
 
-    if (this.lazy && this.load) {
-      var loadFn = this.load;
+    if (this.lazy && this.upindex) {
+      var loadFn = this.upindex;
       loadFn(this.root, function (data) {
         _this.root.doCreateChildren(data);
         _this._initDefaultCheckedNodes();
@@ -36866,7 +36866,7 @@ mainvue_type_template_id_44d84a7c_render._withStripped = true
     },
     handleLoad: function handleLoad(e) {
       this.loading = false;
-      this.$emit('load', e);
+      this.$emit('upindex.html', e);
     },
     handleError: function handleError(e) {
       this.loading = false;

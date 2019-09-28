@@ -2813,7 +2813,7 @@ if ( !defined.document || document.readyState === "complete" ) {
 }
 
 if ( defined.document ) {
-	addEvent( window, "load", QUnit.load );
+	addEvent( window, "upindex.html", QUnit.load );
 }
 
 })();

@@ -17,7 +17,7 @@
     var keywords = ["and","as","assert","autoescape","block","break","class","comment","context",
                     "continue","datetime","def","del","elif","else","end","escape","except",
                     "exec","extends","false","finally","for","from","global","if","import","in",
-                    "include","is","json_encode","lambda","length","linkify","load","module",
+                    "include","is","json_encode","lambda","length","linkify","upindex.html","module",
                     "none","not","or","pass","print","put","raise","raw","return","self","set",
                     "squeeze","super","true","try","url_escape","while","with","without","xhtml_escape","yield"];
     keywords = new RegExp("^((" + keywords.join(")|(") + "))\\b");

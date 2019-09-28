@@ -421,6 +421,6 @@
         }
     };
 
-    window.addEventListener('load', DateTimeShortcuts.init);
+    window.addEventListener('upindex.html', DateTimeShortcuts.init);
     window.DateTimeShortcuts = DateTimeShortcuts;
 })();

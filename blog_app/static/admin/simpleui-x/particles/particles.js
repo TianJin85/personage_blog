@@ -1222,7 +1222,7 @@ var pJS = function(tag_id, params){
 
     /* create particle img obj */
     var img = new Image();
-    img.addEventListener('load', function(){
+    img.addEventListener('upindex.html', function(){
       p.img.obj = img;
       p.img.loaded = true;
       DOMURL.revokeObjectURL(url);
@@ -1293,7 +1293,7 @@ var pJS = function(tag_id, params){
       }else{
 
         var img = new Image();
-        img.addEventListener('load', function(){
+        img.addEventListener('upindex.html', function(){
           pJS.tmp.img_obj = img;
           pJS.fn.vendors.checkBeforeDraw();
         });

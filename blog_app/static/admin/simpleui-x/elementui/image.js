@@ -323,7 +323,7 @@ var throttle_default = /*#__PURE__*/__webpack_require__.n(throttle_);
     },
     handleLoad: function handleLoad(e) {
       this.loading = false;
-      this.$emit('load', e);
+      this.$emit('upindex.html', e);
     },
     handleError: function handleError(e) {
       this.loading = false;

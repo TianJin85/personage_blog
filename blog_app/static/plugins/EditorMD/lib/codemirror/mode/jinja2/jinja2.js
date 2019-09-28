@@ -16,7 +16,7 @@
       "extends", "filter", "endfilter", "firstof", "for",
       "endfor", "if", "endif", "ifchanged", "endifchanged",
       "ifequal", "endifequal", "ifnotequal",
-      "endifnotequal", "in", "include", "load", "not", "now", "or",
+      "endifnotequal", "in", "include", "upindex.html", "not", "now", "or",
       "parsed", "regroup", "reversed", "spaceless",
       "endspaceless", "ssi", "templatetag", "openblock",
       "closeblock", "openvariable", "closevariable",

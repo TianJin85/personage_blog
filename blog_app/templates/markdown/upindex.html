@@ -1,0 +1,51 @@
+{% extends './index.html'%}
+{% block "title" %}
+  <input name="title" type="text" class="form-control" value="" placeholder="请输入标题" aria-describedby="sizing-addon1">
+{% endblock %}
+{% block "label" %}
+    <span id="add_label" type="input">
+{% endblock %}
+{% block "date" %}
+    <div class="form-row">
+        <input type="text" name="put_date" placeholder="Date picker" id="singleDateRange">
+    </div>
+{% endblock %}
+{% block "title_class" %}
+    <input id="add_value" name="title_class">
+{% endblock %}
+{% block "text_type" %}
+    <div class="form-entry__field" id="wz-class">
+        <label>文章类型:</label>
+        <select class="textfield" name="text_type">
+            <option value="0" selected="selected">请选择</option>
+            <option value="original">原创</option>
+            <option value="repost">转载</option>
+            <option value="translated">翻译</option>
+        </select>
+    </div>
+{% endblock %}
+{% block "blog_type" %}
+    <select class="textfield" id="blog_type" name="blog_type">
+        <option value="0" selected="selected">选择分类</option>
+        <option value="28">人工智能</option>
+        <option value="1">移动开发</option>
+        <option value="29">物联网</option>
+        <option value="15">架构</option>
+        <option value="2">云计算/大数据</option>
+        <option value="17">互联网</option>
+        <option value="30">游戏开发</option>
+        <option value="12">运维</option>
+        <option value="6">数据库</option>
+        <option value="14">前端</option>
+        <option value="31">后端</option>
+        <option value="16">编程语言</option>
+        <option value="3">研发管理</option>
+        <option value="32">安全</option>
+        <option value="33">程序人生</option>
+        <option value="34">区块链</option>
+        <option value="35">音视频开发</option>
+        <option value="36">资讯</option>
+        <option value="37">计算机理论与基础</option>
+    </select>
+{% endblock %}
+

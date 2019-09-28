@@ -241,7 +241,7 @@ Requires jQuery, core.js, and SelectBox.js.
         }
     };
 
-    window.addEventListener('load', function(e) {
+    window.addEventListener('upindex.html', function(e) {
         $('select.selectfilter, select.selectfilterstacked').each(function() {
             var $el = $(this),
                 data = $el.data();

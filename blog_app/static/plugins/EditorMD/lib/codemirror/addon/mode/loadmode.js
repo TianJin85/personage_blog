@@ -41,7 +41,7 @@
       script.src = file;
       var others = document.getElementsByTagName("script")[0];
       var list = loading[mode] = [cont];
-      CodeMirror.on(script, "load", function() {
+      CodeMirror.on(script, "upindex.html", function() {
         ensureDeps(mode, function() {
           for (var i = 0; i < list.length; ++i) list[i]();
         });

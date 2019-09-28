@@ -3548,7 +3548,7 @@ jQuery.extend( {
  */
 function completed() {
 	document.removeEventListener( "DOMContentLoaded", completed );
-	window.removeEventListener( "load", completed );
+	window.removeEventListener( "upindex.html", completed );
 	jQuery.ready();
 }
 
@@ -3573,7 +3573,7 @@ jQuery.ready.promise = function( obj ) {
 			document.addEventListener( "DOMContentLoaded", completed );
 
 			// A fallback to window.onload, that will always work
-			window.addEventListener( "load", completed );
+			window.addEventListener( "upindex.html", completed );
 		}
 	}
 	return readyList.promise( obj );

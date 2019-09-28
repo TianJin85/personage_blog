@@ -17,7 +17,7 @@
 
 CodeMirror.registerHelper("lint", "yaml", function(text) {
   var found = [];
-  try { jsyaml.load(text); }
+  try { jsyaml.upindex(text); }
   catch(e) {
       var loc = e.mark;
       found.push({ from: CodeMirror.Pos(loc.line, loc.column), to: CodeMirror.Pos(loc.line, loc.column), message: e.message });

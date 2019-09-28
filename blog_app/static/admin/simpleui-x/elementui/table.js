@@ -1730,8 +1730,8 @@ table_store_TableStore.prototype.loadData = function (row, treeNode) {
 
   var table = this.table;
   var parentRowKey = treeNode.rowKey;
-  if (table.lazy && table.load) {
-    table.load(row, treeNode, function (data) {
+  if (table.lazy && table.upindex) {
+    table.upindex(row, treeNode, function (data) {
       if (!Array.isArray(data)) {
         throw new Error('data must be an array');
       }
