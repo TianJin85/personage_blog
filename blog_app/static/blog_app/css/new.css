@@ -36,7 +36,13 @@ ul.infos p img { display: block; margin: auto }
 .visitors ul, .bdshare_t { margin: 20px 0 }
 .ad { width: 100%; margin: 10px auto; }
 .infos{width: 730px}
-#conmment-content{height: 60px;  width: 720px;  border-radius: 7px;  margin: 31px 0px;  background-color: rgb(246, 246, 246);}
-#conmment-content div{padding-top: 16px;  margin: 0 auto;  text-align-last: center;  font-family: cursive;color: #799961}
+#conmment-title{height: 60px;  width: 720px;  border-radius: 7px;  margin: 31px 0px;  background-color: rgb(246, 246, 246);}
+#conmment-title div{padding-top: 16px;  margin: 0 auto;  text-align-last: center;  font-family: cursive;color: #799961}
 #iamge span{background-image: url("../images/±Ê¼Ç.png")}
 #font img{width: 20px;height: 20px;display: -webkit-inline-flex;}
+#conmment-content{border:2px solid #ccd4d9;height: 433px;width: 720px; }
+#user-image img{display: block;width: 36px;height: 36px;}
+#user-image{ display: inline}
+#conmment-bottom div{color: #ffffff;  position: relative;  width: 90px;  left: 626px;  background-color: rgb(150, 185, 125);}
+#conmment-bottom {border-top: solid 1px #ccd4d9;width: 716px;}
+#conmment-bottom div img{width: 20px;height: 20px;display: unset;}

@@ -31,13 +31,29 @@
     </div>
     <div class="conmment">
 
-        <div id="conmment-content">
-
+        <div id="conmment-title">
             <div id="font">
                 <img src="{%static 'blog_app/images/笔记.png'%}">
                 <span>点击评论</span>
             </div>
+        </div>
+{#        <div id="user-image">#}
+{#            <img src="{% static 'blog_app/images/USER SETTINGS.png' %}">#}
+{#        </div>#}
+        <div id="conmment-content">
+            <div id="conten-text">
+                <textarea></textarea>
+            </div>
+            <div id="conmment-bottom">
+                <div>
+                    <img src="{% static 'blog_app/images/笔.png' %}">
+                    <span>分享笔记</span>
+                </div>
 
+            </div>
+          <script>
+            var simplemde = new SimpleMDE();
+          </script>
         </div>
     </div>
     <div class="ad"> </div>
