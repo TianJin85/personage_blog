@@ -29,7 +29,7 @@ class ListIndexView(View):
 
     def post(self, request, *args, **kwargs):
         data = "tianjin"
-        print(self.request.POST['name'])
+        print(self.request.POST['id'])
         return HttpResponse(content=data)
 
 
@@ -103,7 +103,10 @@ class ListNewView(View):
                         }
 
         return render(request, self.template_name, text_content)
-
+    def post(self,request, *args, **kwargs):
+        print(self.request.POST['name'])
+        data = "tianjin"
+        return HttpResponse(content=data)
 
 class ListShareView(View):
     template_name = 'blog_app/share.html'
@@ -196,7 +199,7 @@ class ListNewlistView(View):
 
 
 class ListAmendView(View):
-    template_name = 'markdown/upindex.html'
+    template_name = 'markdown/amend.html'
 
     def get(self, request, *args, **kwargs):
         return render(request, self.template_name)

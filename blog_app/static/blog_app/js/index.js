@@ -1,8 +1,16 @@
 
 $(document).ready(function () {
-    $("#click_num").click(function () {
 
-        this.submit("/index");
+    $(".readmore").click(function () {
+        $.post(this.href,
+        {
+          name:"Donald Duck",
+          city:"Duckburg",
+          csrfmiddlewaretoken:'{{ csrf_token  }}'
+        },
+        function(){
+          window.location.href=this.href;
+        });
     });
 
 });
