@@ -21,7 +21,7 @@
   {# Load CSS and JavaScript #}
   {% bootstrap_css %}
   {% bootstrap_javascript jquery='full' %}
-  <script src="{% static 'blog_app/js/index.js' %}"></script>
+{#  <script src="{% static 'blog_app/js/index.js' %}"></script>#}
 
 
 </head>
@@ -48,11 +48,23 @@
           {% for item in values %}
             <div class="Article_list">
               <h6>标题:{{ item.title}}</h6>
-              <p class="dateview"><span>{{item.put_date}}</span><span>作者：夏枯草</span><span>文章类型：{{item.text_type}}</span><a id="click_num" title="{{ item.id }}" href="{{ item.id }}/new" target="_blank" class="readmore" >阅读全文>></a></p>
+              <p class="dateview"><span>{{item.put_date}}</span><span>作者：夏枯草</span><span>文章类型：{{item.text_type}}</span><a id="click_num" title="{{ item.id }}" href="/{{ item.id }}/new" target="_blank" class="readmore" >阅读全文>></a></p>
             </div>
           {% endfor %}
         </div>
-
+        <script>
+        $(document).ready(function(){
+            $(".readmore").click(function(){
+                $.post(this.href,
+                { article_id:this.title,
+                  csrfmiddlewaretoken:'{{ csrf_token  }}'
+                },
+                function(data,status){
+                  {#alert("数据：" + data + "\n状态：" + status);#}
+                });
+            });
+        });
+</script>
     <aside class="right">
       <div class="weather"><iframe width="250" scrolling="no" height="60" frameborder="0" allowtransparency="true" src="http://i.tianqi.com/index.php?c=code&id=12&icon=1&num=1"></iframe></div>
       <div class="news">

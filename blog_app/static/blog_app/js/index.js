@@ -2,15 +2,16 @@
 $(document).ready(function () {
 
     $(".readmore").click(function () {
-        $.post(this.href,
-        {
-          name:"Donald Duck",
-          city:"Duckburg",
-          csrfmiddlewaretoken:'{{ csrf_token  }}'
-        },
-        function(){
-          window.location.href=this.href;
-        });
+      $.post('/20/new',
+    {
+      name:"Donald Duck",
+      city:"Duckburg",
+      csrfmiddlewaretoken:'{{ csrf_token  }}'
+    },
+    function(data,status){
+      alert("数据：" + data + "\n状态：" + status);
     });
 
-});
+    });
+
+})

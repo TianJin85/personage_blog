@@ -69,8 +69,6 @@ class ListNewView(View):
         # 获取最大id数
         list_id = [item for items in Article.objects.values('id') for item in items.values()]
 
-        article.click_num += 1
-        article.save()
         # 查询最新排行榜
         sort_date = Article.objects.values("id", "title").order_by("put_date")[::-1][:6]
         sort_date = [item for item in sort_date]
@@ -104,9 +102,11 @@ class ListNewView(View):
 
         return render(request, self.template_name, text_content)
     def post(self,request, *args, **kwargs):
-        print(self.request.POST['name'])
-        data = "tianjin"
-        return HttpResponse(content=data)
+        article_id = self.request.POST['article_id']
+        article = Article.objects.get(id=int(article_id))
+        article.click_num += 1
+        article.save()
+        return HttpResponse(content=article_id)
 
 class ListShareView(View):
     template_name = 'blog_app/share.html'
