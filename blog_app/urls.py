@@ -15,5 +15,5 @@ urlpatterns = [
     path('update', views.ListUpdateView.as_view(), name='update'),
     path('delete', views.ListDeleteView.as_view(), name='delete'),
     path('newlist', views.ListNewlistView.as_view(), name='newlist'),
-    path('amend/', views.ListAmendView.as_view(), name='amend')
+    path('amend', views.ListAmendView.as_view(), name='amend')
 ]

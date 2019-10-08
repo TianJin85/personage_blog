@@ -168,7 +168,8 @@
         <textarea name="text_content" style="display:none;"></textarea>
     </div>
 </form>
-    <script>
+    {% block "mkdnjs" %}
+        <script>
         var testEditor;
         $(function () {
             $.get("{% static 'plugins/EditorMD/examples/test.md' %}", function (md) {
@@ -203,6 +204,7 @@
             });
         });
     </script>
+    {%endblock%}
     <script>
     'use strict';
 
