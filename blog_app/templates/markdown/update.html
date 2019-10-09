@@ -47,7 +47,7 @@
                 <td>{{item.put_date}}</td>
                 <td>{{item.click_num}}</td>
                 <td>
-                    <a class="update" href="{% url 'amend'%}" title="{{item.id}}"><span>修改</span></a>
+                    <a class="update" href="amend/?id={{ item.id }}" title="{{item.id}}"><span>修改</span></a>
                     <a id="view" href="{{item.id}}/new"><span>查看</span></a>
                     <a id="delete" href="{{item.id}}/new"><span>删除</span></a>
                 </td>
@@ -55,20 +55,6 @@
             {%endfor%}
         </tbody>
     </table>
-    <script>
-        $(document).ready(function () {
-            $(".update").click(function () {
-                $.get(
-                    "{% url 'amend' %}",
-                    {id: this.title},
-                    function (val) {
-                        console.log(val)
-                    }
-                )
-
-            });
-        });
-    </script>
     <div class="paging">
         <nav aria-label="Page navigation">
 

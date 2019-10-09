@@ -67,11 +67,12 @@
       <div class="modal-body">
           <div class="my_label">
                 <font style="font-size: 13px;color: black;">文章标签:
-                    <input id="add_label_val" name="label">
-                    <span id="la_value"></span>
                     {% block "label" %}
-                    <span id="add_label" type="input">
+                    <input id="add_label_val" name="label">
                     {% endblock %}
+                    <span id="la_value"></span>
+                    <span id="add_label" type="input">
+
                         <img src="{%static 'blog_app/images/addclass.png'%}">
                         <label>添加文章</label>
                     </span>

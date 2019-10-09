@@ -1,24 +1,24 @@
 {% extends './index.html'%}
 {% load static %}
 {% block "title" %}
-  <input name="title" type="text" class="form-control" value="" placeholder="请输入标题" aria-describedby="sizing-addon1">
+  <input name="title" type="text" class="form-control" value="{{ article.title }}" placeholder="请输入标题" aria-describedby="sizing-addon1">
 {% endblock %}
 {% block "label" %}
-    <span id="add_label" type="input">
+      <input id="add_label_val"  value="{{ article.label }}" name="label">
 {% endblock %}
 {% block "date" %}
     <div class="form-row">
-        <input type="text" name="put_date" placeholder="Date picker" id="singleDateRange">
+        <input type="text" name="put_date"  placeholder="Date picker" id="singleDateRange">
     </div>
 {% endblock %}
 {% block "title_class" %}
-    <input id="add_value" name="title_class">
+    <input id="add_value"  value="{{ article.title_class }}" name="title_class">
 {% endblock %}
 {% block "text_type" %}
     <div class="form-entry__field" id="wz-class">
         <label>文章类型:</label>
         <select class="textfield" name="text_type">
-            <option value="0" selected="selected">请选择</option>
+            <option value="0" selected="selected" >请选择</option>
             <option value="original">原创</option>
             <option value="repost">转载</option>
             <option value="translated">翻译</option>
@@ -55,7 +55,8 @@
         $(function () {
             $.post("{% url 'amend' %}",
                 {
-                  csrfmiddlewaretoken:'{{ csrf_token  }}'
+                  csrfmiddlewaretoken:'{{ csrf_token  }}',
+                  id:{{ article.id }}
                 },
                 function (md) {
                 testEditor = editormd("test-editormd", {

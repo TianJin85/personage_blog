@@ -208,12 +208,15 @@ class ListAmendView(View):
 
     def get(self, request, *args, **kwargs):
 
-        return render(request, self.template_name)
+        article = Article.objects.get(id=int(request.GET['id']))
+        context = {"article": article}
+
+        return render(request, self.template_name, context=context)
 
     def post(self, request, *args, **kwargs):
+        article = Article.objects.get(id=int(request.POST['id']))
 
-        return HttpResponse("""<h2>jQuery and AJAX is FUN!!!</h2>
-        <p id="p1">This is some text in a paragraph.</p>""")
+        return HttpResponse(article.text_content)
 
 
 
