@@ -178,13 +178,11 @@ class ListDeleteView(View):
     def get(self, request, *args, **kwargs):
 
         # return render(request, self.template_name)
-        return HttpResponse("""<h2>jQuery and AJAX is FUN!!!</h2>
-<p id="p1">This is some text in a paragraph.</p>""")
+        return HttpResponse(stats=400)
 
     def post(self, request, *args, **kwargs):
 
-        return HttpResponse("""<h2>jQuery and AJAX is FUN!!!</h2>
-        <p id="p1">This is some text in a paragraph.</p>""")
+        return HttpResponse(200)
 
 
 class ListNewlistView(View):
