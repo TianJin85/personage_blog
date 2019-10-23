@@ -193,6 +193,7 @@ class ListAmendView(View):
 
     def post(self, request, *args, **kwargs):
         article = Article.objects.get(id=int(request.POST['id']))
+        print(article)
 
         return HttpResponse(article.text_content)
 

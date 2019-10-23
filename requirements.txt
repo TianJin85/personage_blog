@@ -5,3 +5,4 @@ simpleui
 markdown
 django-simpleui
 pymysql
+uwsgi
