@@ -64,8 +64,9 @@
         {% if up_article.id %}
             <p>上一篇：<a href="{% url 'new' up_article.id %}">{{up_article.title}}</a></p>
         {% endif %}
-
-      <p>下一篇：<a href="{% url 'new' next_article.id %}">{{next_article.title}}</a></p>
+        {% if next_article.id %}
+            <p>下一篇：<a href="{% url 'new' next_article.id %}">{{next_article.title}}</a></p>
+        {% endif %}
     </div>
     <div class="otherlink">
       <h2>相关文章</h2>

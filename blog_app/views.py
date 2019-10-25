@@ -79,8 +79,11 @@ class ListNewView(View):
         sort_click = [item for item in sort_click]
 
         # 下一篇文章
-        next_article = Article.objects.get(id=int(article_id - 1))
-        next_article = {"id": next_article.id, "title": next_article.title}
+        if article_id > 1:
+            next_article = Article.objects.get(id=int(article_id - 1))
+            next_article = {"id": next_article.id, "title": next_article.title}
+        else:
+            next_article = {"id": None, "title": None}
         if max(list_id) > article_id:
             # 上一篇文章
 
