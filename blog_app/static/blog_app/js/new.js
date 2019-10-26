@@ -2,7 +2,13 @@ $(document).ready(function () {
     hide_conmment_content()
 
     $("#font span").click(function () {
-        show_conmment_content();
+        if ($('#conmment-content').hide()) {
+            show_conmment_content();
+        }
+        if ($('#conmment-content').show()){
+            hide_conmment_content();
+        }
+
     });
 
 });
